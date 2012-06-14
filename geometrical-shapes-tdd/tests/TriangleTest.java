@@ -4,7 +4,7 @@ import tddshapes.Triangle;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class ExampleTriangleTest {
+public class TriangleTest {
     @Test
     public void returnsTheAreaOfTheTriangle() {
             //Given
