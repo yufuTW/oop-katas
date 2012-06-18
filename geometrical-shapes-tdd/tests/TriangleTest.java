@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 public class TriangleTest {
     @Test
     public void returnsTheAreaOfTheTriangle() {
-            //Given
+        //Given
         Triangle triangle = new Triangle(10, 5);
 
         //When
