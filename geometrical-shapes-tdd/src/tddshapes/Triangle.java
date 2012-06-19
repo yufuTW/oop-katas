@@ -1,18 +1,20 @@
 package tddshapes;
 
 public class Triangle {
-    private final int height;
-    private final int widht;
+    private double height;
+    private double width;
 
-    public Triangle(int heigh, int widht) {
-        this.height = heigh;
-        this.widht = widht;
+    public Triangle(double height, double width) {
+        this.height = height;
+        this.width = width;
     }
 
     public double calculateArea() {
-        return widht*height/2;
+        return width *height/2;
+    }
 
-
+    public Rectangle findTheSmallestRectangle() {
+        return new Rectangle(height, width);
     }
 }
 
