@@ -1,42 +1,36 @@
 package initial;
 
 public class Employee {
-    private String city;
-    private int houseNumber;
-    private String houseName;
+
     private String firstName;
     private String sureName;
-    private String postCode;
-    private String streetName;
+    private final Address address;
 
-    public Employee(String firstName, String sureName, int houseNumber, String houseName, String streetName, String city, String postCode) {
+
+    public Employee(String firstName, String sureName, Address address) {
+
         this.firstName = firstName;
         this.sureName = sureName;
-
-        this.houseNumber = houseNumber;
-        this.houseName = houseName;
-        this.streetName = streetName;
-        this.city = city;
-        this.postCode = postCode;
+        this.address = address;
     }
 
-    public int getHouseNumber() {
-        return houseNumber;
+    @Override
+    public boolean equals(Object comparedEmployee) {
+        if (this == comparedEmployee) return true;
+        if (comparedEmployee == null || getClass() != comparedEmployee.getClass()) return false;
+
+        Employee employee = (Employee) comparedEmployee;
+
+        if (firstName != null ? !firstName.equals(employee.firstName) : employee.firstName != null) return false;
+        if (sureName != null ? !sureName.equals(employee.sureName) : employee.sureName != null) return false;
+
+        return true;
     }
 
-    public String getStreetName() {
-        return streetName;
-    }
-
-    public String getCityName() {
-        return city;
-    }
-
-    public String getPostCode() {
-        return postCode;
-    }
-
-    public String getHouseName() {
-        return houseName;
+    @Override
+    public int hashCode() {
+        int result = firstName != null ? firstName.hashCode() : 0;
+        result = 31 * result + (sureName != null ? sureName.hashCode() : 0);
+        return result;
     }
 }

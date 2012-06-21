@@ -160,6 +160,13 @@
       </value>
     </option>
   </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="yu">
+      <words>
+        <w>empolyee</w>
+      </words>
+    </dictionary>
+  </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/oop-katas.iml" filepath="$PROJECT_DIR$/oop-katas.iml" />

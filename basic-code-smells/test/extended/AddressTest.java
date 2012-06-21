@@ -1,18 +1,27 @@
 package extended;
 
-import initial.Address;
-import initial.Employee;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class AddressTest {
     @Test
     public void testPrintsAddress() throws Exception {
-        initial.Employee employee = new Employee("Felicity", "Brooks", 5, "", "Lemon Road", "Cantebury", "W5 C56");
-        Address address = new Address(employee);
+        //Given
+        String houseNumber = "5";
+        String houseName = "Berkshire";
+        String streetName = "Lemon Road";
+        String city = "Cantebury";
+        String postCode = "W5 C56";
+        Address address = new Address(houseNumber, houseName, streetName, city, postCode);
+        String expectedAddress = String.format("%s\n%s\n%s\n%s\n%s", houseNumber, houseName, streetName, city, postCode);
 
-        assertThat(address.printAddress(), is("5; ; Lemon Road; Cantebury; W5 C56"));
+        //When
+        String actualAddressString = address.printAddress();
+
+        //Then
+        assertThat(actualAddressString, is(expectedAddress));
     }
 }

@@ -2,17 +2,26 @@ package extended;
 
 
 public class Address {
-    private Employee employee;
+    private final String houseNumber;
+    private final String houseName;
+    private final String streetName;
+    private final String city;
+    private final String postCode;
 
-    public Address(Employee employee) {
-        this.employee = employee;
+    public Address(String houseNumber, String houseName, String streetName, String city, String postCode) {
+
+        this.houseNumber = houseNumber;
+        this.houseName = houseName;
+        this.streetName = streetName;
+        this.city = city;
+        this.postCode = postCode;
     }
 
     public String printAddress() {
-        return employee.getHouseNumber() + "; "
-                + employee.getHouseName() + "; "
-                + employee.getStreetName() + "; "
-                + employee.getCityName()  + "; "
-                + employee.getPostCode();
+        return houseNumber + "\n"
+                + houseName + "\n"
+                + streetName + "\n"
+                + city  + "\n"
+                + postCode;
     }
 }
