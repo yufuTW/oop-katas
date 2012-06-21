@@ -12,8 +12,8 @@ public class Money {
         this.currency = currency;
     }
 
-    public Money multiply(double multiplikator) {
-        return new Money(amount.multiply(new BigDecimal(multiplikator)), currency);
+    public Money multiply(double multiplicator) {
+        return new Money(amount.multiply(new BigDecimal(multiplicator)), currency);
     }
 
     @Override
