@@ -12,13 +12,13 @@ public class PaymentTeamTest {
     public void testPaymentTeamCanCalculateSalaryForAnEmployee(){
         //Given
         Employee employee = new Employee("Felicity", "Brooks", 5, "", "Lemon Road", "Cantebury", "W5 C56");
-        Salary salary = new Salary(new Money(new BigDecimal(30000), Currency.dollar), 0.5);
+        Salary salary = new Salary(new Money(new BigDecimal(30000), Currency.Dollar), 0.5);
 
         //WHEN
         String payslip = new PaymentTeam().printPayslipForAEmployee(employee, salary);
 
         //THEN
-        assertThat(payslip, is("Employee Details: First name: Felicity; Sure name: Brooks; Payment Type: Base; Salary in Dollar: 45000.0"));
+        assertThat(payslip, is("Employee Details: First Name: Felicity; Sure Name: Brooks; Payment Type: Base and Commission; Amount: 45000.00; Currency: Dollar"));
     }
 
 }

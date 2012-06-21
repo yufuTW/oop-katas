@@ -1,7 +1,7 @@
 package extended;
 
 public enum Currency {
-    dollar,
-    rupee,
-    britishPound;
+    Dollar,
+    Rupee,
+    BritishPound
 }

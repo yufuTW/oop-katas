@@ -18,10 +18,7 @@ public class Money {
 
     @Override
     public String toString() {
-        return "Money{" +
-                "amount=" + amount +
-                ", currency=" + currency +
-                '}';
+        return "Amount: " + amount + "; Currency: " + currency;
     }
 
     @Override

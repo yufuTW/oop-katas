@@ -94,4 +94,8 @@ public class Employee {
     public String getPaymentCurrency() {
         return paymentCurrency;
     }
+
+    public String provideEmployeeName() {
+        return String.format("First Name: %s; Sure Name: %s", firstName, sureName);
+    }
 }
