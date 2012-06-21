@@ -17,6 +17,6 @@ public class PaymentTeamTest {
 
         //THEN
         assertThat(payslip, is("Employee Details: First name: Felicity; Sure name: Brooks; Payment Type: Base; Salary in Dollar: 45000.0"));
-
     }
+
 }
