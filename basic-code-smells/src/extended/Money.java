@@ -12,8 +12,8 @@ public class Money {
         this.currency = currency;
     }
 
-    public Money multiply(double multiplicator) {
-        return new Money(amount.multiply(new BigDecimal(multiplicator)), currency);
+    public Money multiply(double multiplier) {
+        return new Money(amount.multiply(new BigDecimal(multiplier)), currency);
     }
 
     @Override
@@ -39,5 +39,17 @@ public class Money {
         int result = amount != null ? amount.hashCode() : 0;
         result = 31 * result + (currency != null ? currency.hashCode() : 0);
         return result;
+    }
+
+    public boolean isNeedToConvertCurrency(Currency salaryCurrency) {
+        return currency != salaryCurrency;
+    }
+
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public Money changeCurrency(Currency toCurrency) {
+        return new Money(amount,toCurrency);
     }
 }

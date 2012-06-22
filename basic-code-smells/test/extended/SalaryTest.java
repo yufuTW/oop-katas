@@ -16,7 +16,7 @@ public class SalaryTest {
         Salary salary = new Salary(baseRate, commissionRate);
 
         //When & Then
-        assertThat(salary.calculateSalary(), is(new Money(new BigDecimal(1200.0),Currency.Dollar)));
+        assertThat(salary.calculateSalaryInBaseCurrency(), is(new Money(new BigDecimal(1200.0),Currency.Dollar)));
     }
 
     @Test
@@ -27,6 +27,6 @@ public class SalaryTest {
         Salary salary = new Salary(baseRate, commissionRate);
 
         //When & Then
-        assertThat(salary.calculateSalary(), is(new Money(new BigDecimal(1000.0), Currency.Dollar)));
+        assertThat(salary.calculateSalaryInBaseCurrency(), is(new Money(new BigDecimal(1000.0), Currency.Dollar)));
     }
 }

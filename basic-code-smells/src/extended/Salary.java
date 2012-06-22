@@ -10,12 +10,12 @@ public class Salary {
         this.commissionRate = commissionRate;
     }
 
-    public Money calculateSalary() {
+    public Money calculateSalaryInBaseCurrency() {
         return baseRate.multiply(1 + commissionRate);
     }
 
     public String generateSalaryDetails() {
-        return String.format("Payment Type: %s; %s", determinePaymentType(), calculateSalary().toString());
+        return String.format("Payment Type: %s; %s", determinePaymentType(), calculateSalaryInBaseCurrency().toString());
     }
 
     private String determinePaymentType() {
