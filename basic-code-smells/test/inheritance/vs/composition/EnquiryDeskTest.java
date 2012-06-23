@@ -1,5 +1,6 @@
 package inheritance.vs.composition;
 
+import org.joda.time.LocalDate;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -35,8 +36,9 @@ public class EnquiryDeskTest {
         BookInfo availableBook = new BookInfo(2, "The brother Karamazov");
         MagazineInfo availableMagazin = new MagazineInfo(50, "Nature");
         MagazineInfo lentMagazin = new MagazineInfo(50, "Science");
-        aLentBook.lend();
-        lentMagazin.lend();
+        LocalDate dueDate = LocalDate.now().plusMonths(1);
+        aLentBook.lend(dueDate);
+        lentMagazin.lend(dueDate);
 
         List<LendableItem> lendableItems = Arrays.asList(aLentBook, availableBook, lentMagazin, availableMagazin);
         EnquiryDesk enquiryDesk = new EnquiryDesk(lendableItems);

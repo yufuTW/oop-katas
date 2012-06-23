@@ -1,7 +1,5 @@
 package inheritance.vs.composition;
 
-import inheritance.vs.composition.BookInfo;
-import inheritance.vs.composition.VolumeSize;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.junit.Test;
@@ -30,7 +28,8 @@ public class BookInfoTest {
         LocalDate inAMonthsTime = DateTime.now().plusMonths(1).toLocalDate();
 
         //WHEN
-        bookInfo.lend();
+        LocalDate dueDate = LocalDate.now().plusMonths(1);
+        bookInfo.lend(dueDate);
 
         //THEN
         assertThat(bookInfo.returnDueDate(), is(inAMonthsTime));
@@ -40,7 +39,8 @@ public class BookInfoTest {
     public void testBookLoosesReturnDateWhenReturned() throws Exception {
         //GIVEN
         BookInfo bookInfo = new BookInfo(100, "Some Book Title");
-        bookInfo.lend();
+        LocalDate dueDate = LocalDate.now().plusMonths(1);
+        bookInfo.lend(dueDate);
 
         //WHEN
         bookInfo.bringLentItemBack();

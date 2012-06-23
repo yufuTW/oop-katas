@@ -28,7 +28,8 @@ public class MagazineInfoTest {
         LocalDate inAMonthsTime = DateTime.now().plusMonths(1).toLocalDate();
 
         //WHEN
-        MagazineInfo.lend();
+        LocalDate dueDate = LocalDate.now().plusMonths(1);
+        MagazineInfo.lend(dueDate);
 
         //THEN
         assertThat(MagazineInfo.returnDueDate(), is(inAMonthsTime));
@@ -38,7 +39,8 @@ public class MagazineInfoTest {
     public void testMagazineLoosesReturnDateWhenReturned() throws Exception {
         //GIVEN
         MagazineInfo MagazineInfo = new MagazineInfo(100, "Some Magazine");
-        MagazineInfo.lend();
+        LocalDate dueDate = LocalDate.now().plusMonths(1);
+        MagazineInfo.lend(dueDate);
 
         //WHEN
         MagazineInfo.bringLentItemBack();

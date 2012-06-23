@@ -15,8 +15,8 @@ public abstract class LendableItem {
         this.title = title;
     }
 
-    public void lend() {
-        returnDueDate = LocalDate.now().plusMonths(1);
+    public void lend(LocalDate dueDate) {
+        returnDueDate = dueDate;
     }
 
     public LocalDate returnDueDate() {
